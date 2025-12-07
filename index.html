@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sidharth — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">Sidharth</h1>
+      <nav class="main-nav">
+        <a href="#projects">Projects</a>
+        <a href="#career">Career</a>
+        <a href="#skills">Skills</a>
+        <a href="#research">Research</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <img src="assets/portrait.jpg" alt="Portrait" class="portrait" />
+      <div class="intro">
+        <p>Hi there and thanks for stopping by! My name is Sidharth — I’m a passionate programmer who enjoys building experiences.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="panel">
+      <h2>Projects</h2>
+      <p>Project list / links go here.</p>
+    </section>
+
+    <section id="career" class="panel">
+      <h2>Career</h2>
+      <p>Career summary goes here.</p>
+    </section>
+
+    <section id="skills" class="panel">
+      <h2>Skills</h2>
+      <p>Skills, tech stack, etc.</p>
+    </section>
+
+    <section id="research" class="panel">
+      <h2>Research</h2>
+      <p>Any research / articles / papers.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Sidharth</small>
+    </div>
+  </footer>
+
+  <script>
+    // small nicety: current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll for nav links
+    document.querySelectorAll('.main-nav a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
